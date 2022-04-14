@@ -14,6 +14,6 @@ allprojects {
   > Step 2. Add the dependency
   ```gradle
   	dependencies {
-	       implementation 'com.github.israr152:UniversalMethods:1.0.0'
+	       implementation 'com.github.israr152:UniversalMethods:1.0.1'
 	}
   ```
