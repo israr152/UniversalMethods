@@ -5,12 +5,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 
-typealias ids = R.id
-typealias strings = R.string
-typealias drawables = R.drawable
-typealias colors = R.color
-typealias dimens = R.dimen
-
 fun Context.showToast(message:String){
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
