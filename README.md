@@ -1,5 +1,12 @@
 # Common Functionality
 
+```
+Common Extension Functions:
+
+1- showToast(String)
+
+```
+
 
 > Step 1. Add the JitPack repository to your build file
 
