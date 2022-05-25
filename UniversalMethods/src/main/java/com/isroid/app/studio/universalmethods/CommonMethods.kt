@@ -14,6 +14,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
+import java.util.regex.Pattern
 
 fun showLog(message:String,tag:String = "TESTING"){
     if(BuildConfig.DEBUG){
@@ -109,6 +110,25 @@ fun Context.shareApp(packageName:String,subject:String="Share app"){
     val url = "https://play.google.com/store/apps/details?id=$packageName"
     val text = "Hey! check out this app at:\n$url"
     shareText(text,subject)
+}
+
+private const val doubleQuote = "\""
+private const val singleQuote = "\'"
+private var special: Pattern = Pattern.compile("[!@#\$%&*()_+=|<>?{}/;:.,$singleQuote$doubleQuote\\[\\]~-]")
+private var digits: Pattern = Pattern.compile("[0-9]")
+fun String.hasSpecialOrDigits(): Boolean {
+    if(special.matcher(this).find() || digits.matcher(this).find()){
+        return true
+    }
+
+    val charArr = toCharArray()
+    for (element in charArr) {
+        val type: Int = Character.getType(element)
+        if (type == Character.SURROGATE.toInt() || type == Character.OTHER_SYMBOL.toInt()) {
+            return true
+        }
+    }
+    return false
 }
 
 fun Context.shareText(text:String,subject:String="share text",intentTitle:String = "Share using:"){
