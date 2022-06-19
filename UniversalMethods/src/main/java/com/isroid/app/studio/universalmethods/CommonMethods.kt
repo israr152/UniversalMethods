@@ -16,12 +16,6 @@ import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import java.util.regex.Pattern
 
-fun showLog(message:String,tag:String = "TESTING"){
-    if(BuildConfig.DEBUG){
-        Log.d(tag,message)
-    }
-}
-
 fun View.gone(){
     visibility = View.GONE
 }
