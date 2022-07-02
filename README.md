@@ -15,11 +15,9 @@ Common Extension Functions:
 10- Context.getColorFromId(id:Int):Int //returns color of passed color id
 11- Context.getDrawableFromId(id:Int):Drawable //returns drawable of passed drawable id
 
-12- showLog(message:String, tag:String = "TESTING") //shows log in Log.d() in debug mode
-
-13- View.gone() //set View's visibility to GONE
-14- View.show() //set View's visibility to VISIBLE
-15- View.invisible() //set View's visibility to INVISIBLE
+12- View.gone() //set View's visibility to GONE
+13- View.show() //set View's visibility to VISIBLE
+14- View.invisible() //set View's visibility to INVISIBLE
 
 ```
 
