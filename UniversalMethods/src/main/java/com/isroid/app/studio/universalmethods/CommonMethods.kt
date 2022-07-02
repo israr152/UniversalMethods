@@ -49,6 +49,8 @@ fun Context.isInternetConnected():Boolean{
 
 fun Context.getWindowWidth(percent:Float = 1.0f) :Int = (resources.displayMetrics.widthPixels*percent).toInt()
 
+fun Context.getWindowHeight(percent:Float = 1.0f) :Int = (resources.displayMetrics.heightPixels*percent).toInt()
+
 fun View.hideKeyboard(){
     val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.hideSoftInputFromWindow(windowToken,0)
