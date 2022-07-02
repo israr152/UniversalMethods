@@ -9,23 +9,28 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.Build
-import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import java.util.regex.Pattern
 
-fun View.gone(){
-    visibility = View.GONE
+
+fun Context.dpToPixels(dp:Float):Int{
+    return TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        dp,
+        resources.displayMetrics
+    ).toInt()
 }
 
-fun View.show(){
-    visibility = View.VISIBLE
-}
-
-fun View.invisible(){
-    visibility = View.INVISIBLE
+fun Context.spToPixels(sp:Float):Int{
+    return TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_SP,
+        sp,
+        resources.displayMetrics
+    ).toInt()
 }
 
 fun Context.isInternetConnected():Boolean{
